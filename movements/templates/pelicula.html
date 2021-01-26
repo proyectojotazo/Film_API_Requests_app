@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Pelicula</title>
+</head>
+<body>
+    <h2><label for="titulo">Titulo:</label></h2>
+    <h4><label for="titulo2">{{ pelicula['Title'] }}</label></h4>
+    <h2><label for="año">Año:</label></h2>
+    <h4><label for="año2">{{ pelicula['Year'] }}</label></h4>
+    <h2><label for="director">Director:</label></h2>
+    <h4><label for="director2">{{ pelicula['Director'] }}</label></h4>
+    <h2><label for="actores">Actores:</label></h2>
+    <h4><label for="actores2">{{ pelicula['Actors'] }}</label></h4>
+    <h2><label for="sinopsis">Sinopsis:</label></h2>
+    <h4><label for="sinopsis2">{{ pelicula['Plot'] }}</label></h4>
+    <h2><label for="portada">Portada:</label></h2>
+    <img src="{{ pelicula['Poster'] }}" alt="poster"><br>
+    <a href="{{ url_for('index') }}">Volver a inicio</a>
+</body>
+</html>

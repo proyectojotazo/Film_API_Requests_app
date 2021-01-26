@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Pelicula</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <h1>Película a buscar</h1>
+        <input type="text" name="pelicula"><br><br>
+        {% if errores %}
+        <p>{{ errores }}</p>
+        {% endif %}
+        <br><br><input type="submit" value="Buscar">
+    </form>
+    <br>
+    <br>
+    <br>
+    {% if datos %}
+    <form action="/muestrapeli" method="POST">Selecciona Una Opción
+        <select name="select">
+            {% for elemento in datos %}
+            <option value="{{ elemento['imdb'] }}">{{ elemento['Title'] }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Mostrar">
+    </form>
+    {% endif %}
+</body>
+</html>
